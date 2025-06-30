@@ -13,4 +13,13 @@ public class BallController : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(movement, ForceMode.Impulse);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("Collided with Wall");
+            ScoreManager.instance.AddScore(-1);
+        }
+    }
 }
