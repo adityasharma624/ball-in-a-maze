@@ -6,6 +6,7 @@ public class Collectables : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            ScoreManager.instance.AddScore(1);
             Invoke("DestroyCollectables", 0.05f);
         }
     }
