@@ -5,9 +5,11 @@ public class LevelManager : MonoBehaviour
     public GameObject ballPrefab;
     public Transform initialPos;
 
+    public CameraFollow cameraFollow;
     private void Start()
     {
-        Instantiate(ballPrefab, initialPos.position, Quaternion.identity);
+        GameObject go = Instantiate(ballPrefab, initialPos.position, Quaternion.identity);
+        cameraFollow.target = go.transform;
     }
 
 

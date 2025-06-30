@@ -1744,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 580099587237240119, guid: c1155f2b898f1c9419dbf1ccc67b2311, type: 3}
   initialPos: {fileID: 871226884}
+  cameraFollow: {fileID: 330585548}
 --- !u!1 &1969750458
 GameObject:
   m_ObjectHideFlags: 0
