@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
+    public CollectableManager collectableManager;
     public float timeValue = 60.0f;
     private bool isTimerRunning = false;
     private float currentTime;
@@ -20,10 +21,15 @@ public class Timer : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
 
-            if (currentTime <= 0)
+            if (currentTime <= 0.0f && !collectableManager.allCoinsCollected)
             {
                 currentTime = 0.0f;
                 isTimerRunning=false;
+            }
+
+            if (collectableManager.allCoinsCollected)
+            {
+                isTimerRunning = false;
             }
             
             updateTimerText();
