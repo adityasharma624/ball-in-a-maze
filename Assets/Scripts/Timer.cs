@@ -25,11 +25,13 @@ public class Timer : MonoBehaviour
             {
                 currentTime = 0.0f;
                 isTimerRunning=false;
+                GameManager.instance.GameOverScreen(false);
             }
 
             if (collectableManager.allCoinsCollected)
             {
                 isTimerRunning = false;
+                GameManager.instance.GameOverScreen(true);
             }
             
             updateTimerText();
